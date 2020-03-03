@@ -1,0 +1,86 @@
+\documentclass{beamer}				% frames
+%\documentclass[notes]{beamer}		% frames + notes
+%\documentclass[notes=only]{beamer}	% notes
+\input{preamble.tex}
+\input{frames.tex}
+\input{defs.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SPECIFY INFORMATION TO BE USED IN FRONT FRAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mtitle}{Example: Quantum Mechanics}
+\newcommand{\mauthor}{Even Marius Nordhagen}
+\newcommand{\mmail}{evenmn@fys.uio.no}
+\newcommand{\massignn}{.}
+
+\begin{document}
+
+\frontframe
+
+\note{
+	\begin{itemize}
+		\item This is an example presentation about quantum mechanics
+		\item The front frame is generated using \textit{frontframe}
+		\item Note also that the notes can be turned on and off in the first line of this file
+	\end{itemize}
+}
+
+\mframe{Outline}{}{
+	\begin{itemize}
+		\setlength\itemsep{1em}	% This line specifies the spacing between bullet points
+		\item The Schrödinger Equation
+		\item The Probability distribution
+		\item <2> References
+	\end{itemize}
+		\note<1>{Here is the outline of the presentation}
+		\note<2>{Additional note for the last bullet point. Note that the progression wheel is not moving when elements are added to a slide.}
+}
+
+\mframe{The Schrödinger Equation}{The time-independent Schrödinger equation}{
+	The time-independent Schröinger equation is given by
+	\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+		\hat{\mathcal{H}}\Psi_n=\varepsilon_n\Psi_n,
+	\end{empheq}
+	with $\hat{\mathcal{H}}$ as the Hamiltonian, $\Psi_n$ as the wave function and $\varepsilon_n$ as the corresponding energy \cite{schrodinger_undulatory_1926}. 
+}
+\note{Here, we have a basic slide with subtitle}
+
+\mframe{The Probability Distribution}{}{
+	The probability distribution in quantum mechanics is given by
+	\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+		P(\boldsymbol{r})=\frac{\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r})}{\int d\boldsymbol{r}\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r})},
+	\end{empheq}
+	where $\boldsymbol{r}$ is a set of spatial and spin coordinates \cite{born_zur_1926}.
+	\pause
+	However, often the wave function is assumed to be normalized, and the equation is simply written as
+	\begin{equation}
+	P(\boldsymbol{r})=\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r}),
+	\end{equation}
+	\note<1>{Here is a basic slide without a subtitle.}
+	\note<2>{The pause function can be used to add more elements to a slide}
+}
+
+\titleframe{Thank you!}
+
+\note{The title frame contains just a large centered text (should not be confused with frontframe)}
+
+\mframe{References}{}{
+	\printbibliography
+}
+
+%\appendix
+
+% Backup slides
+
+%\titleframe{Some Backup Slides}
+
+%\mframe{Backup slides}{}{
+%	\begin{figure}
+%	\centering
+%	\input{../tikz/biasvariancedecomp.tex}
+%	\end{figure}
+%}
+
+
+\end{document}
