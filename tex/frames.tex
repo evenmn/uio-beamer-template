@@ -4,21 +4,19 @@
 \textblockorigin{1mm}{1mm} % start everything near the top-left corner
 \setlength{\parindent}{0pt}
 
-\setbeamertemplate{itemize items}{\color{color0}$\blacktriangleright$}
-\setbeamertemplate{bibliography item}{\insertbiblabel}
-%\setbeamertemplate{note page}[plain]
-\setbeameroption{show notes on second screen=right}
-\addtobeamertemplate{footnote}{}{\vspace{10ex}}
-\mathtoolsset{showonlyrefs}
-\usefonttheme{serif}
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-\renewcommand*{\bibfont}{\tiny}
+\setbeamertemplate{itemize items}{\color{maincolor}$\blacktriangleright$}  % triangular bullet points
+\setbeamertemplate{bibliography item}{\insertbiblabel}                      % for reference slide
+\setbeameroption{show notes on second screen=right}                         % where to display notes
+\addtobeamertemplate{footnote}{}{\vspace{10ex}}								% footnote spacing
+\mathtoolsset{showonlyrefs}													% ignore unused references
+\usefonttheme{serif}														% serif font
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}							% special characters as footnote symbols
+\renewcommand*{\bibfont}{\tiny}												% reference fontsize tiny
 
 \setbeamercolor{titlelike}{fg=black}
 \setbeamercolor{block title}{fg=white}
 \setbeamercolor{block title}{bg=black}
-\setbeamercolor{block body}{bg=color0}
+\setbeamercolor{block body}{bg=maincolor}
 
 \setbeamerfont{itemize/enumerate body}{size=\scriptsize}
 \setbeamerfont{itemize/enumerate subbody}{size=\scriptsize}
@@ -54,7 +52,7 @@
 			\foreach \x in {1,2,...,\inserttotalframenumber} 
 			\draw [gray!30,very thick] (\x/\inserttotalframenumber*360:3) -- (\x/\inserttotalframenumber*360:4);
 			\foreach \x in {1,2,...,\insertframenumber}
-			\draw[color0,very thick] (\x/\inserttotalframenumber*360:3) -- (\x/\inserttotalframenumber*360:4);
+			\draw[maincolor,very thick] (\x/\inserttotalframenumber*360:3) -- (\x/\inserttotalframenumber*360:4);
 			\node at (0,0) [] {\tiny{\textbf{\textcolor{black}{\insertframenumber}}}};
 			\end{tikzpicture}
 		\end{textblock}
@@ -64,7 +62,7 @@
 			\centering
 			\includegraphics[scale=.2]{../images/UiO_Seal_A_ENG_cmyk.eps}
 		\end{textblock}
-		\frametitle{\textcolor{color0}{#1}}
+		\frametitle{\textcolor{maincolor}{#1}}
 		\framesubtitle{#2}
 		\vspace{-0.5cm}
 		\scriptsize{#3}}
@@ -76,7 +74,7 @@
 \newcommand{\titleframe}[1]{
 	\mframe{}{}{
 		\begin{center}
-			{\Huge \textcolor{color0}{#1}}
+			{\Huge \textcolor{maincolor}{#1}}
 		\end{center}
 	}
 }

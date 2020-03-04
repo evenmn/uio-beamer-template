@@ -32,8 +32,8 @@
 
 % biblatex
 \usepackage[backend=bibtex,
-	%sorting=none,
-	style=nature
+			%sorting=none,
+			style=nature
 ]{biblatex}
 \addbibresource{refs.bib}
 
@@ -42,23 +42,17 @@
 			overlay
 ]{textpos}
 
- beamer presentation tool for Linux (display frames and notes separately)
+% beamer presentation tool for Linux (display frames and notes separately)
 \usepackage[duration=35, 
 			lastminutes=10
 ]{pdfpcnotes} 
 
 % colors
-\definecolor{color0}{RGB}{28, 39, 131}
-\colorlet{color1}{red}
-\definecolor{color2}{rgb}{0.274509803921569,0.470588235294118,0.129411764705882}
-\colorlet{color3}{orange}
-\definecolor{myblue}{rgb}{0.6, 0.6, 1}
-\definecolor{myred}{rgb}{1,0.8,0.856862745098039}
-\definecolor{azul}{RGB}{1,80,159}
-\definecolor{azulclaro}{RGB}{230,230,255}
+\definecolor{maincolor}{RGB}{28, 39, 131}			% to be used in titles, progression wheel and references
+\definecolor{empheqbackground}{rgb}{0.6, 0.6, 1}	% to be used as equation and quote background
 
-\captionsetup[figure]{labelfont={color=color0}}
-\captionsetup[table]{labelfont={color=color0}}
+\captionsetup[figure]{labelfont={color=maincolor}}
+\captionsetup[table]{labelfont={color=maincolor}}
 
 %empheq equation color box
 \newlength\mytemplen
@@ -83,12 +77,12 @@
 	\mytemplen\dp\mytempbox
 	\advance\mytemplen #2\relax
 	\dp\mytempbox\mytemplen
-	\colorbox{myblue}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+	\colorbox{empheqbackground}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
 
 % double quotes
 \newcommand*\openquote{\makebox(40,-5){\scalebox{5}{``}}}
 \newcommand*\closequote{\makebox(25,-22){\scalebox{5}{''}}}
-\colorlet{shadecolor}{myblue}
+\colorlet{shadecolor}{empheqbackground}
 \makeatletter
 \newif\if@right
 \def\shadequote{\@righttrue\shadequote@i}
