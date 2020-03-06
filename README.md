@@ -60,4 +60,4 @@ The following slide is generated:
 ## Presentation mode on Linux
 For presentation mode, run 
 
-```pdfpc -n right tex/main.pdf```
+```pdfpc -n right english/main.pdf```
