@@ -1,0 +1,94 @@
+\documentclass[norsk]{beamer}				% frames
+%\documentclass[notes, norsk]{beamer}		% frames + notes
+%\documentclass[notes=only]{beamer}	% notes
+\input{preamble.tex}
+\input{frames.tex}
+\input{defs.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SPECIFY INFORMATION TO BE USED IN FRONT FRAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mtitle}{Eksempel: Kvantemekanikk}
+\newcommand{\mauthor}{Even Marius Nordhagen}
+\newcommand{\mmail}{evenmn@fys.uio.no}
+\newcommand{\massignn}{.}
+
+\begin{document}
+
+\frontframe
+
+\note{
+	\begin{itemize}
+		\item This is an example presentation about quantum mechanics
+		\item The front frame is generated using \textit{frontframe}
+		\item Note also that the notes can be turned on and off in the first line of this file
+	\end{itemize}
+}
+
+\mframe{Oversikt}{}{
+	\begin{itemize}
+		\setlength\itemsep{1em}	% This line specifies the spacing between bullet points
+		\item Schrödinger's ligning
+		\item Sannsynlighetsfordelingen
+		\item <2> Referanser
+	\end{itemize}
+		\note<1>{Her er en oversikt over presentasjonen}
+		\note<2>{Notis for siste kulepunkt}
+}
+
+\mframe{}{}{
+	\begin{shadequote}{
+			Den generelle kvanteteorien er nesten komplett... ...De underliggende fysiske lovene nødvendig for den matematiske teorien for en stor del av fysikken og hele kjemien er kjent, og utfordringen ligger i at anvendelsen av disse lovene fører til ligninger som er alt for kompliserte til at de kan løses. \par Paul M. Dirac, \emph{Quantum Mechanics of Many-electron Systems} \supercite{dirac_paul_adrien_maurice_quantum_1929}}
+	\end{shadequote}
+}
+
+\note{Lysbilde uten tittel eller undertittel}
+
+\mframe{Schrödinger's ligning}{Den tidsuavhengige Schrödingerligningen}{
+	Den tidsuavhengige Schrödingerligningen er gitt ved
+	\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+		\hat{\mathcal{H}}\Psi_n=\varepsilon_n\Psi_n
+	\end{empheq}
+	hvor $\hat{\mathcal{H}}$ er Hamiltonoperatoren, $\Psi_n$ er bølgefunksjonen og $\varepsilon_n$ er den tilknyttede energien \supercite{schrodinger_undulatory_1926}. 
+}
+\note{Her er et enkelt lysbilde med undertittel}
+
+\mframe{Sannsynlighetsfordelingen}{}{
+	Sannsynlighetsfordelingen i kvantemekanikk er gitt ved
+	\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+		P(\boldsymbol{r})=\frac{\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r})}{\int d\boldsymbol{r}\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r})}
+	\end{empheq}
+	hvor $\boldsymbol{r}$ er et sett av romlige- og spinkoordinater \supercite{born_zur_1926}.
+	\pause
+	Ofte antar vi at bølgefunksjonen er normalisert, noe som forenkler ligningen:
+	\begin{equation}
+	P(\boldsymbol{r})=\Psi_n(\boldsymbol{r})^*\Psi_n(\boldsymbol{r}).
+	\end{equation}
+	\note<1>{Dette er en enkelt lysbilde uten undertittel}
+	\note<2>{'pause'-funksjonen kan brukes til å legge elementer til lysbildet}
+}
+
+\titleframe{Tusen takk!}
+
+\note{'titleframe' inneholder kun en sentrert tekst (må ikke forveksles med 'frontframe')}
+
+\mframe{References}{}{
+	\printbibliography
+}
+
+%\appendix
+
+% Backup slides
+
+%\titleframe{Some Backup Slides}
+
+%\mframe{Backup slides}{}{
+%	\begin{figure}
+%	\centering
+%	\input{../tikz/biasvariancedecomp.tex}
+%	\end{figure}
+%}
+
+
+\end{document}
